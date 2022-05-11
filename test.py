@@ -19,4 +19,6 @@ driver2.add_cookie({'domain': '.eo.finance', 'expiry': 1967784870, 'httpOnly': F
 driver2.add_cookie({'domain': '.eo.finance', 'expiry': 1967784870, 'httpOnly': False, 'name': 'token', 'path': '/', 'secure': False, 'value': '0cb6cd98f8f46770c5002f06e39751a87dd85ca7545f1e0b263a572932b9b413e2ffe17896f508dd8e98362619a4e9d22f0406bba48d12c5f01ed727f15ef931'})
 driver2.refresh()
 print("succsess")
-time.sleep(24*3600)
+while True:
+    time.sleep(10)
+    print(f"\ndriver1 = {driver.find_element(By.ID,'hashes-per-second').text}\ndriver2: {driver2.find_element(By.ID,'hashes-per-second').text}")
