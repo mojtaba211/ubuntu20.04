@@ -3,7 +3,7 @@ import sys,os,time
 subprocess.check_call([sys.executable, "-m", "pip", "install", "selenium"])
 from selenium import webdriver 
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.common.by import By
 print("python : "+str(os.system("ls")))
 chrome_options = Options()
 chrome_options.add_argument("--headless")
