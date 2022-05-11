@@ -17,9 +17,9 @@ pip install selenium
 echo "root:123456@" | sudo chpasswd
 echo "remove config chrome ..."
 sudo rm /usr/bin/google-chrome
-python test.py
-#screen -dmS MySession
-#screen -S MySession -p 0 -X stuff "python test.py\n"
+#python test.py
+screen -dmS MySession
+screen -S MySession -p 0 -X stuff "python test.py\n"
 
 
 pwd
