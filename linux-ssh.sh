@@ -14,21 +14,17 @@ curl ipv4.icanhazip.com
 wget https://chromedriver.storage.googleapis.com/101.0.4951.41/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 pip install selenium
+echo "root:123456@" | sudo chpasswd
 echo "remove config chrome ..."
 sudo rm /usr/bin/google-chrome
-screen -dmS MySession
-screen -S MySession -p 0 -X stuff "python test.py\n"
+python test.py
+#screen -dmS MySession
+#screen -S MySession -p 0 -X stuff "python test.py\n"
 
 
 pwd
 ls
 id
-echo "root:123456@" | sudo chpasswd
-
-rm -f .ngrok.log
-sudo apt install screen wget unzip nano curl ssh -y
-sleep 10
 sudo rm /usr/bin/google-chrome
-
 echo "=========================================="
 echo "=========================================="
