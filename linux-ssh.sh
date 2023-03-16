@@ -11,13 +11,14 @@ sudo hostname computer
 echo "### Install ngrok ###"
 id
 curl ipv4.icanhazip.com
-wget https://chromedriver.storage.googleapis.com/101.0.4951.41/chromedriver_linux64.zip
-unzip chromedriver_linux64.zip
-pip install selenium
+#wget https://chromedriver.storage.googleapis.com/101.0.4951.41/chromedriver_linux64.zip
+#unzip chromedriver_linux64.zip
+#pip install selenium
 echo "root:123456@" | sudo chpasswd
+ip a
 echo "remove config chrome ..."
-sudo rm /usr/bin/google-chrome
-python test.py
+#sudo rm /usr/bin/google-chrome
+#python test.py
 #screen -dmS MySession
 #screen -S MySession -p 0 -X stuff "python test.py\n"
 
