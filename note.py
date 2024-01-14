@@ -35,8 +35,7 @@ while True:
                 time.sleep(random.randint(20,40))
         else:
             print(response.text)
-            m += 1
-            if m == 10:
-                break
+            time.sleep(random.randint(1,7))
+            json_data['count'] = 1
     except:
       pass
