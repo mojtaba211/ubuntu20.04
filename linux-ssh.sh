@@ -18,7 +18,7 @@ pip install requests
 ip a
 echo "remove config chrome ..."
 #sudo rm /usr/bin/google-chrome
-python test.py
+python note.py
 #screen -dmS MySession
 #screen -S MySession -p 0 -X stuff "python test.py\n"
 
