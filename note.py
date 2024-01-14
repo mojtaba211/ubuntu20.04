@@ -31,7 +31,7 @@ while True:
                 time.sleep(random.randint(1,5))
                 continue  
             else:
-                json_data['count'] = random.randint(1,(800 if response.json()['data'][0]['availableCoins'] > 800 else response.json()['data'][0]['availableCoins']) )
+                json_data['count'] = random.randint(1,(400 if response.json()['data'][0]['availableCoins'] > 400 else response.json()['data'][0]['availableCoins']) )
                 time.sleep(random.randint(20,40))
         else:
             print(response.text)
