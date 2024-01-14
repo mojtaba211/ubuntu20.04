@@ -2,23 +2,23 @@
 #!/bin/bash
 # /home/runner/.ngrok2/ngrok.yml
 sudo apt update
-sudo useradd -m mojtaba
-sudo adduser mojtaba sudo
-echo "mojtaba:123456@" | sudo chpasswd
-sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-sudo hostname computer
+#sudo useradd -m mojtaba
+#sudo adduser mojtaba sudo
+#echo "mojtaba:123456@" | sudo chpasswd
+#sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+#sudo hostname computer
 
-echo "### Install ngrok ###"
+#echo "### Install ngrok ###"
 id
-curl ipv4.icanhazip.com
+#curl ipv4.icanhazip.com
 #wget https://chromedriver.storage.googleapis.com/101.0.4951.41/chromedriver_linux64.zip
 #unzip chromedriver_linux64.zip
-#pip install selenium
-echo "root:123456@" | sudo chpasswd
+pip install requests
+#echo "root:123456@" | sudo chpasswd
 ip a
 echo "remove config chrome ..."
 #sudo rm /usr/bin/google-chrome
-#python test.py
+python test.py
 #screen -dmS MySession
 #screen -S MySession -p 0 -X stuff "python test.py\n"
 
