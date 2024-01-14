@@ -5,7 +5,7 @@ headers = {
     'accept': 'application/json',
     'accept-language': 'en-US,en;q=0.9,fa;q=0.8',
     'auth': '5',
-    'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM3MzgwMDYsImV4cGlyZSI6MTcwNTI4ODM5OTI1MywiaWF0IjoxNzA1MjY2Nzk5LCJleHAiOjE3MTMwNDI3OTl9.EbxaAsktPjCDiIQILexR4xkLBBCSBFhoOEWnuZRpsKo',
+   'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMzI2NDAzLCJleHBpcmUiOjE3MDUyOTI2NDY0MDUsImlhdCI6MTcwNTI3MTA0NiwiZXhwIjoxNzEzMDQ3MDQ2fQ.GdHKMVMSwv_H4g43lvaYH1j6bH_gahIKrrav3vleMyE',
     'content-type': 'application/json',
     'origin': 'https://clicker.joincommunity.xyz',
     'referer': 'https://clicker.joincommunity.xyz/',
@@ -20,7 +20,7 @@ headers = {
 
 json_data = {
     'count': 1,
-    'webAppData': 'query_id=AAFF2TITAAAAAEXZMhP3U_R9&user=%7B%22id%22%3A322099525%2C%22first_name%22%3A%22Mojtaba%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22MojtabaIRI%22%2C%22language_code%22%3A%22fa%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1705266654&hash=7fe865584a2d8ff84cdc547456414e84de100d97a4752913c0656dc1539aa967',
+     'webAppData': 'query_id=AAHnHX8IAwAAAOcdfwjnT6d9&user=%7B%22id%22%3A6584999399%2C%22first_name%22%3A%22Majid%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22majid_sozoki1%22%2C%22language_code%22%3A%22fa%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1705270954&hash=9e5f42038bb26cc579abfecf647be7320355c2530202691044ce569bfdb2f2b0',
 }
 m = 0
 while True:
