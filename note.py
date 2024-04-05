@@ -1,41 +1,49 @@
 import requests,time,random
 
 headers = {
-    'authority': 'clicker-api.joincommunity.xyz',
-    'accept': 'application/json',
-    'accept-language': 'en-US,en;q=0.9,fa;q=0.8',
-    'auth': '5',
-   'authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExMzI2NDAzLCJleHBpcmUiOjE3MDUyOTI2NDY0MDUsImlhdCI6MTcwNTI3MTA0NiwiZXhwIjoxNzEzMDQ3MDQ2fQ.GdHKMVMSwv_H4g43lvaYH1j6bH_gahIKrrav3vleMyE',
-    'content-type': 'application/json',
-    'origin': 'https://clicker.joincommunity.xyz',
-    'referer': 'https://clicker.joincommunity.xyz/',
-    'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.9,fa;q=0.8',
+    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMyMjA5OTUyNSwiaWF0IjoxNzEyMzE2OTUwLCJleHAiOjE3MTIzMjA1NTB9.0H2ki1l2lg2tlQr7sOzv-YY7zKjoW43im18vEqx6CpY',
+    'Connection': 'keep-alive',
+    'Content-Id': '322070279',
+    'Content-Type': 'application/json',
+    'Origin': 'https://app.tapswap.ai',
+    'Referer': 'https://app.tapswap.ai/',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-site',
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
+    'sec-ch-ua': '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
     'sec-ch-ua-mobile': '?1',
     'sec-ch-ua-platform': '"Android"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-site',
-    'user-agent': 'Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36',
+    'x-cv': '342',
 }
 
 json_data = {
-    'count': 1,
-     'webAppData': 'query_id=AAHnHX8IAwAAAOcdfwjnT6d9&user=%7B%22id%22%3A6584999399%2C%22first_name%22%3A%22Majid%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22majid_sozoki1%22%2C%22language_code%22%3A%22fa%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1705270954&hash=9e5f42038bb26cc579abfecf647be7320355c2530202691044ce569bfdb2f2b0',
+    'taps': 1,
+    'time': 1712317237798,
 }
-m = 0
+
+balance = None
+tap = 1
 while True:
     try:
-        response = requests.post('https://clicker-api.joincommunity.xyz/clicker/core/click', headers=headers, json=json_data,timeout=5)
-        if response.json()['ok'] == True:
-            if response.json()['data'][0] == 0:
-                time.sleep(random.randint(1,5))
-                continue  
+        json_data['taps'] = random.randint(1,tap)
+        json_data['time'] = int(time.time()*1000)
+        response = requests.post('https://api.tapswap.ai/api/player/submit_taps', headers=headers, json=json_data)
+        
+        if response.status_code == 201:
+            balanace_2 = response.json()['player']['shares']
+            if balanace_2 == balance:
+                print("ERR Balance")
+                time.sleep(60)
+                continue
             else:
-                json_data['count'] = random.randint(1,(400 if response.json()['data'][0]['availableCoins'] > 400 else response.json()['data'][0]['availableCoins']) )
-                time.sleep(random.randint(20,40))
+                tap = (response.json()['player']['energy']//response.json()['player']['tap_level'])
+            time.sleep(random.randint(10,30))
         else:
+            print(response.status_code)
             print(response.text)
-            time.sleep(random.randint(1,7))
-            json_data['count'] = 1
+            time.sleep(60)
     except:
       pass
