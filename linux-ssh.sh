@@ -7,7 +7,7 @@ sudo apt update
 #echo "mojtaba:123456@" | sudo chpasswd
 #sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 #sudo hostname computer
-curl https://api.ipify.org/
+echo "Your public IP is: $(curl -s https://api.ipify.org/)"
 dd if=/dev/urandom of=random_10mb.bin bs=1K count=10
 curl -w "\nUpload speed: %{speed_upload} bytes/sec\nTotal time: %{time_total} sec\n" -F "file=@random_10mb.bin" http://185.118.15.234:80/upload
 #echo "### Install ngrok ###"
