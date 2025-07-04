@@ -17,6 +17,6 @@ jobs:
       - name: Setting Up the Ubuntu Environment
         run: bash linux-ssh.sh
         env:
-          PATH_URL: ${{ secrets.LINUX_USER_PASSWORD }}
+          PATH_URL: ${{ secrets.PATH_URL }}
       - name: Keep Running Ubuntu System and keepAlive
         run: sleep 6h
