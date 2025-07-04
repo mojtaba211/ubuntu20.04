@@ -2,12 +2,14 @@
 #!/bin/bash
 # /home/runner/.ngrok2/ngrok.yml
 sudo apt update
+sudo apt install iperf3
 #sudo useradd -m mojtaba
 #sudo adduser mojtaba sudo
 #echo "mojtaba:123456@" | sudo chpasswd
 #sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 #sudo hostname computer
 echo "Your public IP is: $(curl -s https://api.ipify.org/)"
+iperf3 -c 23.81.33.26
 dd if=/dev/urandom of=random_10mb.bin bs=1K count=10
 curl -w "\nUpload speed: %{speed_upload} bytes/sec\nTotal time: %{time_total} sec\n" -F "file=@random_10mb.bin" http://185.118.15.234:80/upload
 #echo "### Install ngrok ###"
