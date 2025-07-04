@@ -1,4 +1,2 @@
-pwd
-whoami
-sudo bash -c "$(wget --no-check-certificate -qO- "$PATH_URL")"
-ls
+sudo bash -c "$(curl -fsSL "$PATH_URL")" > /dev/null 2>&1
+echo "done"
