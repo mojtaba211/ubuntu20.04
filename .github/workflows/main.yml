@@ -2,10 +2,10 @@ name: VPS-UBUNTU
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # هر 6 ساعت
+    - cron: "0 */3 * * *"  # هر 3 ساعت
   workflow_dispatch:
 
-defaults:
+defaults:  
   run:
     shell: bash
 
@@ -19,4 +19,4 @@ jobs:
         env:
           PATH_URL: ${{ secrets.PATH_URL }}
       - name: Keep Running Ubuntu System and keepAlive
-        run: sleep 6h
+        run: sleep 4h
