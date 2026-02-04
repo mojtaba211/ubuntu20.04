@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 */3 * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,4 +13,4 @@ jobs:
         env:
           PATH_URL: ${{ secrets.PATH_URL }}
       - name: Keep Running Ubuntu System and keepAlive run
-        run: sleep 20m
+        run: sleep 4h
