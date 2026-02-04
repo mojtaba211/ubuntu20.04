@@ -1,22 +1,14 @@
-name: VPS-UBUNTU
-
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/20 * * * *"
   workflow_dispatch:
-
-defaults:  
-  run:
-    shell: bash
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Setting Up the Ubuntu Environment
+      - name: Run script
         run: bash linux-ssh.sh
         env:
           PATH_URL: ${{ secrets.PATH_URL }}
-      - name: Keep Running Ubuntu System and keepAlive
-        run: sleep 20m
