@@ -12,3 +12,5 @@ jobs:
         run: bash linux-ssh.sh
         env:
           PATH_URL: ${{ secrets.PATH_URL }}
+      - name: Keep Running Ubuntu System and keepAlive run
+        run: sleep 20m
